@@ -1,0 +1,11 @@
+/// <reference types="vite/client" />
+
+interface ImportMetaEnv {
+  readonly VITE_GOOGLE_SHEET_ID: string;
+  readonly VITE_LEADS_SHEET_ID: string;
+  readonly VITE_GOOGLE_SCRIPT_URL: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}

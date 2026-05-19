@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #C9A84C;
+  --color-gold-light: #D4B96A;
+  --color-gold-dark: #A8873A;
+  --font-family-playfair: 'Playfair Display', Georgia, serif;
+  --font-family-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-family-cairo: 'Cairo', 'Tajawal', sans-serif;
+}
+
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.relative.py-24.bg-black.overflow-hidden {
+	direction: ltr;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Arabic font when RTL */
+[dir="rtl"] body,
+[dir="rtl"] .font-body {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A84C;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4B96A;
+}
+
+/* Font classes */
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-cairo {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+/* Gold color utility */
+.text-gold {
+  color: #C9A84C;
+}
+
+.bg-gold {
+  background-color: #C9A84C;
+}
+
+.border-gold {
+  border-color: #C9A84C;
+}
+
+/* Gold opacity variants */
+.bg-gold\/3  { background-color: rgba(201, 168, 76, 0.03); }
+.bg-gold\/5  { background-color: rgba(201, 168, 76, 0.05); }
+.bg-gold\/8  { background-color: rgba(201, 168, 76, 0.08); }
+.bg-gold\/10 { background-color: rgba(201, 168, 76, 0.10); }
+.bg-gold\/20 { background-color: rgba(201, 168, 76, 0.20); }
+.bg-gold\/30 { background-color: rgba(201, 168, 76, 0.30); }
+
+.text-gold\/40 { color: rgba(201, 168, 76, 0.40); }
+.text-gold\/50 { color: rgba(201, 168, 76, 0.50); }
+.text-gold\/60 { color: rgba(201, 168, 76, 0.60); }
+.text-gold\/70 { color: rgba(201, 168, 76, 0.70); }
+
+.border-gold\/20 { border-color: rgba(201, 168, 76, 0.20); }
+.border-gold\/30 { border-color: rgba(201, 168, 76, 0.30); }
+.border-gold\/40 { border-color: rgba(201, 168, 76, 0.40); }
+.border-gold\/50 { border-color: rgba(201, 168, 76, 0.50); }
+.border-gold\/60 { border-color: rgba(201, 168, 76, 0.60); }
+
+.from-gold {
+  --tw-gradient-from: #C9A84C var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(201, 168, 76, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-gold {
+  --tw-gradient-to: #C9A84C var(--tw-gradient-to-position);
+}
+
+.via-gold {
+  --tw-gradient-to: rgba(201, 168, 76, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #C9A84C var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.shadow-gold\/10 { box-shadow: 0 4px 16px rgba(201, 168, 76, 0.1); }
+.shadow-gold\/20 { box-shadow: 0 4px 24px rgba(201, 168, 76, 0.2); }
+.shadow-gold\/30 { box-shadow: 0 4px 32px rgba(201, 168, 76, 0.3); }
+
+/* hover: gold variants */
+.hover\:bg-gold:hover { background-color: #C9A84C; }
+.hover\:bg-gold\/10:hover { background-color: rgba(201, 168, 76, 0.10); }
+.hover\:bg-gold\/20:hover { background-color: rgba(201, 168, 76, 0.20); }
+.hover\:bg-gold\/90:hover { background-color: rgba(201, 168, 76, 0.90); }
+.hover\:border-gold\/30:hover { border-color: rgba(201, 168, 76, 0.30); }
+.hover\:border-gold\/40:hover { border-color: rgba(201, 168, 76, 0.40); }
+.hover\:border-gold\/50:hover { border-color: rgba(201, 168, 76, 0.50); }
+.hover\:text-gold:hover { color: #C9A84C; }
+.group-hover\:text-gold { color: #C9A84C; }
+
+/* Selection */
+::selection {
+  background: rgba(201, 168, 76, 0.3);
+  color: white;
+}
+
+/* Direction utilities */
+.direction-ltr {
+  direction: ltr;
+}
+
+.direction-rtl {
+  direction: rtl;
+}
+
+/* Animation utilities */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(201, 168, 76, 0.1) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Smooth transitions for all sections */
+section {
+  transition: background-color 0.3s ease;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Input reset */
+input, textarea, select {
+  background: transparent;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 0.4;
+}
+
+/* Prevent overscroll color */
+html {
+  background: #0a0a0a;
+}
